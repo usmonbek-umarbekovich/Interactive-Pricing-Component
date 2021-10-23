@@ -15,7 +15,7 @@ function Trial() {
         <div className='pricing'>
           <p className='page-views'>{pageviews} pageviews</p>
           <p className='bill'>
-            <span className='bill-amount'>${totalBill.toFixed(2)}</span>/
+            <span className='bill-amount'>${totalBill.toFixed(2)}</span>/&nbsp;
             {billDuration}
           </p>
         </div>
@@ -31,20 +31,23 @@ function Trial() {
         </div>
         <div className='billing-type'>
           <label htmlFor='monthly'>Monthly Billing</label>
-          <input
-            type='radio'
-            name='billing'
-            id='monthly'
-            checked={discount === 1}
-            onChange={() => setDiscount(1)}
-          />
-          <input
-            type='radio'
-            name='billing'
-            id='yearly'
-            checked={discount === 0.75}
-            onChange={() => setDiscount(0.75)}
-          />
+          <div className='toggler'>
+            <input
+              type='radio'
+              name='billing'
+              id='monthly'
+              checked={discount === 1}
+              onChange={() => setDiscount(1)}
+            />
+            <input
+              type='radio'
+              name='billing'
+              id='yearly'
+              checked={discount === 0.75}
+              onChange={() => setDiscount(0.75)}
+            />
+            <div className='btn-toggle'></div>
+          </div>
           <label htmlFor='yearly'>
             Yearly Billing <span className='discount'>25% discount</span>
           </label>
