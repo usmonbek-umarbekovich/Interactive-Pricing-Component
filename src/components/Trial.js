@@ -26,6 +26,7 @@ function Trial() {
             id='price-range'
             max='4'
             value={index}
+            style={{ backgroundSize: `${index * 25}% 100%` }}
             onChange={e => setIndex(+e.target.value)}
           />
         </div>

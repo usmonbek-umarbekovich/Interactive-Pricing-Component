@@ -47,6 +47,12 @@ li {
   outline: none;
   padding: 0.7rem 2rem;
   border-radius: 2rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.btn:hover {
+  color: hsl(0, 0%, 100%);
 }
 
 #header {
@@ -112,6 +118,38 @@ li {
   width: 100%;
   border: none;
   outline: none;
+  cursor: pointer;
+  -webkit-appearance: none;
+  border-radius: 5px;
+  background: linear-gradient(hsl(174, 77%, 80%), hsl(174, 77%, 80%)) no-repeat;
+  background-color: hsl(224, 65%, 95%);
+}
+
+.slidebar #price-range::-webkit-slider-runnable-track {
+  background: transparent;
+  border-radius: 1rem;
+  height: 7px;
+}
+
+.slidebar #price-range::-webkit-slider-thumb {
+  width: 2.5rem;
+  height: 2.5rem;
+  background: url('../images/icon-slider.svg') no-repeat center;
+  background-color: hsl(174, 86%, 45%);
+  border-radius: 50%;
+  -webkit-appearance: none;
+  margin-top: -1rem;
+  box-shadow: 0 1rem 1.2em hsla(174, 86%, 45%, 0.4);
+  transition: background-color 0.3s ease;
+}
+
+.slidebar #price-range::-webkit-slider-thumb:hover {
+  background-color: hsl(174, 77%, 65%);
+}
+
+.slidebar #price-range:active::-webkit-slider-thumb {
+  background-color: hsl(174, 86%, 45%);
+  cursor: grabbing;
 }
 
 .trial .billing-type {
@@ -129,6 +167,11 @@ li {
   width: 3rem;
   height: 1.5rem;
   border-radius: 2rem;
+  transition: background-color 0.3s ease;
+}
+
+.billing-type .toggler:hover {
+  background-color: hsl(174, 77%, 80%);
 }
 
 .toggler input {
@@ -200,4 +243,5 @@ li {
   --a: hsl(227, 35%, 25%);
   --a: hsl(230, 100%, 99%);
   --a: hsl(0, 0%, 100%);
+  --a: hsl(225, 20%, 60%);
 }
