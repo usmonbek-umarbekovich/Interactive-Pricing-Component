@@ -12,23 +12,23 @@ function Trial() {
   return (
     <form className='trial-form' onSubmit={e => e.preventDefault()}>
       <div className='trial'>
-        <div className='pricing'>
+        <div className='pricing-grid'>
           <p className='page-views'>{pageviews} pageviews</p>
           <p className='bill'>
             <span className='bill-amount'>${totalBill.toFixed(2)}</span>/&nbsp;
             {billDuration}
           </p>
-        </div>
-        <div className='slidebar'>
-          <input
-            type='range'
-            name='price-range'
-            id='price-range'
-            max='4'
-            value={index}
-            style={{ backgroundSize: `${index * 25}% 100%` }}
-            onChange={e => setIndex(+e.target.value)}
-          />
+          <div className='slidebar'>
+            <input
+              type='range'
+              name='price-range'
+              id='price-range'
+              max='4'
+              value={index}
+              style={{ backgroundSize: `${index * 25}% 100%` }}
+              onChange={e => setIndex(+e.target.value)}
+            />
+          </div>
         </div>
         <div className='billing-type'>
           <label htmlFor='monthly'>Monthly Billing</label>
@@ -50,7 +50,10 @@ function Trial() {
             <div className='btn-toggle'></div>
           </div>
           <label htmlFor='yearly'>
-            Yearly Billing <span className='discount'>25% discount</span>
+            Yearly Billing{' '}
+            <span className='discount'>
+              {window.innerWidth > 465 ? '25% discount' : '-25%'}
+            </span>
           </label>
         </div>
       </div>

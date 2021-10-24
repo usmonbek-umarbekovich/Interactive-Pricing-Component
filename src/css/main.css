@@ -62,7 +62,7 @@ li {
 }
 
 #header .header-title,
-.pricing .bill-amount {
+.pricing-grid .bill-amount {
   font-weight: 800;
   color: hsl(227, 35%, 25%);
 }
@@ -87,31 +87,32 @@ li {
   padding: 0 3rem;
 }
 
-.trial .pricing {
-  display: flex;
-  justify-content: space-between;
+.trial .pricing-grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
   align-items: center;
 }
 
-.pricing .page-views {
+.pricing-grid .page-views {
   font-weight: 800;
   text-transform: uppercase;
   word-spacing: 5px;
   letter-spacing: 1px;
 }
 
-.pricing .bill {
+.pricing-grid .bill {
   display: flex;
   align-items: center;
 }
 
-.pricing .bill .bill-amount {
+.pricing-grid .bill .bill-amount {
   font-size: 2.5rem;
   margin-right: 5px;
 }
 
-.trial .slidebar {
+.pricing-grid .slidebar {
   margin: 3rem 0;
+  grid-column: 1 / -1;
 }
 
 .slidebar #price-range {
@@ -119,6 +120,7 @@ li {
   border: none;
   outline: none;
   cursor: pointer;
+  margin-bottom: 1rem;
   -webkit-appearance: none;
   border-radius: 5px;
   background: linear-gradient(hsl(174, 77%, 80%), hsl(174, 77%, 80%)) no-repeat;
@@ -232,16 +234,104 @@ li {
   height: 1rem;
 }
 
-.a {
-  --a: hsl(174, 77%, 80%);
-  --a: hsl(174, 86%, 45%);
-  --a: hsl(14, 92%, 95%);
-  --a: hsl(15, 100%, 70%);
-  --a: hsl(226, 100%, 87%);
-  --a: hsl(224, 65%, 95%);
-  --a: hsl(223, 50%, 87%);
-  --a: hsl(227, 35%, 25%);
-  --a: hsl(230, 100%, 99%);
-  --a: hsl(0, 0%, 100%);
-  --a: hsl(225, 20%, 60%);
+/* Media Queries */
+@media (max-width: 523px) {
+  .trial-form {
+    padding: 2rem 0;
+  }
+
+  .trial-form .trial,
+  .trial-form .trial-info {
+    padding: 0 2rem;
+  }
+
+  .trial-form .trial-info {
+    margin-top: 2rem;
+  }
+
+  .trial .billing-type {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 465px) {
+  .btn {
+    font-size: 1.2rem;
+    padding: 1rem 3.5rem;
+  }
+
+  .trial .pricing-grid {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .trial .billing-type {
+    margin: 2rem 0 2.5rem auto;
+  }
+
+  .pricing-grid .slidebar {
+    width: 100%;
+    grid-row: 2;
+    margin: 2rem 0;
+  }
+
+  .slidebar #price-range {
+    margin-bottom: 0;
+  }
+
+  .trial-form .trial-info {
+    flex-direction: column;
+  }
+
+  .trial-info .trial-benefits {
+    margin-bottom: 2.5rem;
+  }
+
+  .trial-info .trial-benefits li {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 415px) {
+  #header {
+    padding: 4rem 0;
+  }
+
+  .trial .billing-type {
+    flex-direction: column;
+    align-items: center;
+    margin-left: 0;
+  }
+
+  .billing-type .toggler {
+    margin: 1.5rem 0;
+    transform: rotate(90deg);
+  }
+}
+
+@media (hover: none) {
+  * {
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  .btn:hover {
+    color: hsl(226, 100%, 87%);
+  }
+
+  .btn:active {
+    color: hsl(0, 0%, 100%);
+  }
+
+  .slidebar #price-range::-webkit-slider-thumb:hover {
+    background-color: hsl(174, 86%, 45%);
+  }
+
+  .billing-type .toggler:hover {
+    background-color: hsl(223, 50%, 87%);
+  }
+
+  .billing-type .toggler:active {
+    background-color: hsl(174, 77%, 80%);
+  }
 }
