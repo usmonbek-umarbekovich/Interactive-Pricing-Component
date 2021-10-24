@@ -25,7 +25,7 @@ Users should be able to:
 ### Links
 
 - Solution URL: [Source Code](https://github.com/usmonbek-umarbekovich/Interactive-Pricing-Component)
-- Live Site URL: [Live Site](https://your-live-site-url.com)
+- Live Site URL: [Live Site](https://usmonbek-pricing.netlify.app)
 
 ## My process
 
